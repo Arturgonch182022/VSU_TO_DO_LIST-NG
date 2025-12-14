@@ -1,1 +1,695 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body.dark-theme {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%) !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .background {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%) !important;
+}
+
+body.dark-theme .gradient-bg {
+  background:
+    radial-gradient(circle at 15% 50%, rgba(80, 80, 200, 0.2), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(120, 70, 200, 0.2), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(0, 150, 255, 0.15), transparent 40%) !important;
+}
+
+body.dark-theme .gradient-blur {
+  backdrop-filter: blur(80px) brightness(0.7) !important;
+  -webkit-backdrop-filter: blur(80px) brightness(0.7) !important;
+}
+
+body.dark-theme .particle {
+  background: rgba(138, 155, 255, 0.1) !important;
+  box-shadow: 0 0 20px rgba(138, 155, 255, 0.3) !important;
+}
+
+body.dark-theme::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8a9bff, #a17fe0) !important;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #a17fe0, #8a9bff) !important;
+}
+
+body.dark-theme .container {
+  background: transparent !important;
+}
+
+body.dark-theme h1 {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #8a9bff 0%, #a17fe0 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: 0 0 30px rgba(138, 155, 255, 0.5) !important;
+}
+
+body.dark-theme h1::after {
+  background: linear-gradient(135deg, #8a9bff 0%, #a17fe0 100%) !important;
+  box-shadow: 0 0 10px rgba(138, 155, 255, 0.5) !important;
+}
+
+body.dark-theme .btn-theme {
+  background: linear-gradient(135deg, #8a9bff 0%, #a17fe0 100%) !important;
+  color: white !important;
+  box-shadow:
+    0 4px 15px rgba(138, 155, 255, 0.3),
+    0 0 20px rgba(138, 155, 255, 0.2) !important;
+}
+
+body.dark-theme .btn-theme:hover {
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 6px 20px rgba(138, 155, 255, 0.4),
+    0 0 30px rgba(138, 155, 255, 0.3) !important;
+}
+
+body.dark-theme .stats {
+  background: linear-gradient(
+    135deg,
+    rgba(80, 80, 200, 0.95) 0%,
+    rgba(120, 70, 200, 0.95) 100%
+  ) !important;
+  color: white !important;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(138, 155, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+body.dark-theme .stat-item {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-theme .btn-clear {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+body.dark-theme .btn-clear:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.dark-theme .task-form,
+body.dark-theme .edit-form {
+  background: rgba(25, 25, 35, 0.95) !important;
+  color: #e0e0e0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(138, 155, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+body.dark-theme .task-form:hover,
+body.dark-theme .edit-form:hover {
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 50px rgba(138, 155, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(138, 155, 255, 0.3) !important;
+}
+
+body.dark-theme .task-form h3,
+body.dark-theme .edit-form h3 {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(138, 155, 255, 0.5) !important;
+}
+
+body.dark-theme .form-group label {
+  color: #d0d0ff !important;
+  font-weight: 500 !important;
+}
+
+body.dark-theme .form-control {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-theme .form-control:focus {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: #8a9bff !important;
+  box-shadow:
+    0 0 0 3px rgba(138, 155, 255, 0.2),
+    0 0 20px rgba(138, 155, 255, 0.3) !important;
+}
+
+body.dark-theme .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body.dark-theme .form-text {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.dark-theme .links-preview {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-theme .links-preview h4 {
+  color: #d0d0ff !important;
+}
+
+body.dark-theme .link-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-theme .link-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: #8a9bff !important;
+  box-shadow: 0 5px 15px rgba(138, 155, 255, 0.2) !important;
+}
+
+body.dark-theme .link-url {
+  color: #8a9bff !important;
+}
+
+body.dark-theme .link-url:hover {
+  color: #a5b4fc !important;
+}
+
+body.dark-theme .link-counter {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.dark-theme .btn-primary {
+  background: linear-gradient(135deg, #8a9bff 0%, #a17fe0 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow:
+    0 4px 15px rgba(138, 155, 255, 0.3),
+    0 0 20px rgba(138, 255, 255, 0.1) !important;
+}
+
+body.dark-theme .btn-primary:hover:not(:disabled) {
+  transform: translateY(-3px) !important;
+  box-shadow:
+    0 8px 25px rgba(138, 155, 255, 0.4),
+    0 0 30px rgba(138, 255, 255, 0.2) !important;
+}
+
+body.dark-theme .btn-secondary {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-theme .btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.dark-theme .btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997) !important;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3) !important;
+}
+
+body.dark-theme .btn-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14) !important;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3) !important;
+}
+
+body.dark-theme .btn-edit {
+  background: linear-gradient(135deg, #17a2b8, #20c997) !important;
+  box-shadow: 0 2px 10px rgba(23, 162, 184, 0.3) !important;
+}
+
+body.dark-theme .btn-delete {
+  background: linear-gradient(135deg, #dc3545, #e83e8c) !important;
+  box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3) !important;
+}
+
+body.dark-theme .btn-link-remove {
+  color: #ff6b6b !important;
+}
+
+body.dark-theme .btn-link-remove:hover {
+  color: #ff5252 !important;
+}
+
+body.dark-theme .task-item {
+  background: rgba(30, 30, 45, 0.95) !important;
+  color: #e0e0e0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(138, 155, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+body.dark-theme .task-item:hover {
+  transform: translateY(-5px) scale(1.01) !important;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(138, 155, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(138, 155, 255, 0.3) !important;
+}
+
+body.dark-theme .task-item.completed {
+  background: rgba(25, 135, 84, 0.2) !important;
+  border-color: rgba(25, 135, 84, 0.3) !important;
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.2),
+    0 0 30px rgba(25, 135, 84, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-theme .task-item.completed:hover {
+  background: rgba(25, 135, 84, 0.25) !important;
+  border-color: rgba(25, 135, 84, 0.4) !important;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(25, 135, 84, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-theme .task-item.completed .task-title {
+  color: #4ade80 !important;
+  text-decoration: line-through !important;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.3) !important;
+}
+
+body.dark-theme .task-item.completed .task-status.completed-text {
+  color: #4ade80 !important;
+  font-weight: 600 !important;
+}
+
+body.dark-theme .task-title {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+body.dark-theme .task-checkbox {
+  accent-color: #8a9bff !important;
+}
+
+body.dark-theme .task-checkbox:checked {
+  accent-color: #4ade80 !important;
+}
+
+body.dark-theme .task-badge {
+  background: rgba(138, 155, 255, 0.2) !important;
+  color: #8a9bff !important;
+  border: 1px solid rgba(138, 155, 255, 0.3) !important;
+  box-shadow: 0 0 10px rgba(138, 155, 255, 0.2) !important;
+}
+
+body.dark-theme .task-links {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-theme .task-links h4 {
+  color: #d0d0ff !important;
+}
+
+body.dark-theme .task-link-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-theme .task-link-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: #8a9bff !important;
+  box-shadow: 0 5px 15px rgba(138, 155, 255, 0.2) !important;
+}
+
+body.dark-theme .task-link {
+  color: #8a9bff !important;
+}
+
+body.dark-theme .task-link:hover {
+  color: #a5b4fc !important;
+}
+
+body.dark-theme .task-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-theme .task-date {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body.dark-theme .task-status {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark-theme .no-tasks {
+  background: transparent !important;
+}
+
+body.dark-theme .empty-state {
+  color: rgba(255, 255, 255, 0.7) !important;
+  text-shadow: 0 0 20px rgba(138, 155, 255, 0.3) !important;
+}
+
+body.dark-theme .empty-state p {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.dark-theme .glow-effect::after {
+  background: linear-gradient(135deg, #8a9bff, #a17fe0, #41c8ff, #8a9bff) !important;
+  opacity: 0.4 !important;
+  filter: blur(15px) !important;
+}
+
+body.dark-theme .edit-form {
+  background: linear-gradient(
+    135deg,
+    rgba(60, 50, 120, 0.95) 0%,
+    rgba(40, 30, 80, 0.95) 100%
+  ) !important;
+  color: #ffffff !important;
+  border: 2px solid #8a9bff !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(138, 155, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 20px !important;
+}
+
+body.dark-theme .edit-form h3 {
+  color: #ffffff !important;
+  text-shadow: 0 0 15px rgba(138, 155, 255, 0.8) !important;
+  font-size: 1.4em !important;
+  margin-bottom: 25px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 2px solid rgba(138, 155, 255, 0.5) !important;
+  background: linear-gradient(135deg, #8a9bff 0%, #a17fe0 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body.dark-theme .edit-form .form-control {
+  background: rgba(20, 15, 40, 0.8) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(138, 155, 255, 0.4) !important;
+  box-shadow:
+    inset 0 2px 10px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(138, 155, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+body.dark-theme .edit-form .form-control:focus {
+  background: rgba(30, 25, 60, 0.9) !important;
+  border-color: #8a9bff !important;
+  box-shadow:
+    inset 0 2px 15px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(138, 155, 255, 0.4),
+    0 0 0 3px rgba(138, 155, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.dark-theme .edit-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-style: italic !important;
+}
+
+body.dark-theme .edit-form .form-group label {
+  color: #d0d0ff !important;
+  font-weight: 600 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  font-size: 1.05em !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+body.dark-theme .edit-form .links-preview {
+  background: rgba(20, 15, 40, 0.6) !important;
+  border: 1px solid rgba(138, 155, 255, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow:
+    inset 0 2px 10px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(138, 155, 255, 0.15) !important;
+}
+
+body.dark-theme .edit-form .links-preview h4 {
+  color: #b0b0ff !important;
+  font-weight: 600 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-theme .edit-form .link-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(138, 155, 255, 0.2) !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+body.dark-theme .edit-form .link-item:hover {
+  background: rgba(138, 155, 255, 0.1) !important;
+  border-color: #8a9bff !important;
+  transform: translateX(5px) !important;
+  box-shadow:
+    0 5px 15px rgba(138, 155, 255, 0.3),
+    0 0 25px rgba(138, 155, 255, 0.2) !important;
+}
+
+body.dark-theme .edit-form .form-actions {
+  margin-top: 25px !important;
+  padding-top: 20px !important;
+  border-top: 2px solid rgba(138, 155, 255, 0.3) !important;
+}
+
+body.dark-theme .edit-form .btn-success {
+  background: linear-gradient(135deg, #8a9bff 0%, #a17fe0 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow:
+    0 4px 20px rgba(138, 155, 255, 0.4),
+    0 0 30px rgba(138, 155, 255, 0.3) !important;
+  padding: 14px 28px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+body.dark-theme .edit-form .btn-success:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow:
+    0 8px 30px rgba(138, 155, 255, 0.6),
+    0 0 40px rgba(138, 155, 255, 0.4) !important;
+}
+
+body.dark-theme .edit-form .btn-success::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  ) !important;
+  transition: left 0.7s !important;
+}
+
+body.dark-theme .edit-form .btn-success:hover::before {
+  left: 100% !important;
+}
+
+body.dark-theme .edit-form .btn-warning {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow:
+    0 4px 20px rgba(255, 107, 107, 0.4),
+    0 0 30px rgba(255, 142, 83, 0.3) !important;
+  padding: 14px 28px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+body.dark-theme .edit-form .btn-warning:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow:
+    0 8px 30px rgba(255, 107, 107, 0.6),
+    0 0 40px rgba(255, 142, 83, 0.4) !important;
+}
+
+body.dark-theme .edit-form .btn-warning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  ) !important;
+  transition: left 0.7s !important;
+}
+
+body.dark-theme .edit-form .btn-warning:hover::before {
+  left: 100% !important;
+}
+
+@keyframes slideDownEdit {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+body.dark-theme .edit-form {
+  animation: slideDownEdit 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+body.dark-theme .edit-form .form-text {
+  color: rgba(200, 200, 255, 0.7) !important;
+  font-style: italic !important;
+  font-size: 0.9em !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-theme .edit-form .link-counter {
+  color: rgba(200, 200, 255, 0.8) !important;
+  font-weight: 600 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  padding: 8px 15px !important;
+  background: rgba(138, 155, 255, 0.1) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(138, 155, 255, 0.3) !important;
+  display: inline-block !important;
+}
+
+body.dark-theme .edit-form .btn-secondary {
+  background: linear-gradient(135deg, #6c63ff 0%, #5a52d3 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow:
+    0 4px 15px rgba(108, 99, 255, 0.4),
+    0 0 20px rgba(90, 82, 211, 0.3) !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+}
+
+body.dark-theme .edit-form .btn-secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7a72ff 0%, #6a62e3 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 6px 20px rgba(108, 99, 255, 0.6),
+    0 0 25px rgba(90, 82, 211, 0.4) !important;
+}
+
+@keyframes editFormGlow {
+  0%, 100% {
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      0 0 50px rgba(138, 155, 255, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
+  }
+  50% {
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      0 0 60px rgba(138, 155, 255, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(138, 155, 255, 0.8) !important;
+  }
+}
+
+body.dark-theme .edit-form {
+  animation:
+    slideDownEdit 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    editFormGlow 3s ease-in-out infinite !important;
+}
+
+body.dark-theme .edit-form:hover {
+  border-color: #8a9bff !important;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 70px rgba(138, 155, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(-5px) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@media (max-width: 768px) {
+  body.dark-theme .gradient-blur {
+    backdrop-filter: blur(60px) brightness(0.7) !important;
+  }
+
+  body.dark-theme .task-item,
+  body.dark-theme .task-form,
+  body.dark-theme .edit-form {
+    backdrop-filter: blur(20px) !important;
+  }
+
+  body.dark-theme .particle {
+    display: none !important;
+  }
+
+  body.dark-theme .edit-form {
+    padding: 20px 15px !important;
+    margin: 15px 0 !important;
+    backdrop-filter: blur(30px) !important;
+  }
+
+  body.dark-theme .edit-form h3 {
+    font-size: 1.3em !important;
+  }
+
+  body.dark-theme .edit-form .btn-success,
+  body.dark-theme .edit-form .btn-warning {
+    padding: 12px 20px !important;
+    font-size: 15px !important;
+  }
+
+  body.dark-theme .edit-form .form-actions {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+}
